@@ -73,9 +73,8 @@ void Google_Sheets_Init(char test[ ][20], String sheets_gas_id, int param_size)
 	
 }
 
-void Data_to_Sheets(int num, String sheet_name,...)
+void Data_to_Sheets(int num,...)
 {
-	sheetName = sheet_name;
 	va_list lst;
 	va_start(lst,num);
 	
@@ -105,7 +104,6 @@ void Send_Data()
 	HTTPClient http;
 
 	String url = "https://script.google.com/macros/s/" + GAS_ID + "/exec?";
-	url = url+"sheet_name="+sheetName+"&";
 	int i=0;
 	while(i!=Count)
 	{
